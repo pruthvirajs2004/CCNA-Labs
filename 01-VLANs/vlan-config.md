@@ -14,25 +14,25 @@ hostname SW1
 
 interface FastEthernet0/1
 
-&#x20;switchport access vlan 10
+switchport access vlan 10
 
-&#x20;switchport mode access
+switchport mode access
 
 
 
 interface FastEthernet0/2
 
-&#x20;switchport access vlan 20
+switchport access vlan 20
 
-&#x20;switchport mode access
+switchport mode access
 
 
 
 interface FastEthernet0/24
 
-&#x20;switchport trunk allowed vlan 10,20
+switchport trunk allowed vlan 10,20
 
-&#x20;switchport mode trunk
+switchport mode trunk
 
 ```
 
@@ -50,25 +50,25 @@ hostname SW2
 
 interface FastEthernet0/1
 
-&#x20;switchport access vlan 10
+switchport access vlan 10
 
-&#x20;switchport mode access
+switchport mode access
 
 
 
 interface FastEthernet0/2
 
-&#x20;switchport access vlan 20
+switchport access vlan 20
 
-&#x20;switchport mode access
+switchport mode access
 
 
 
 interface FastEthernet0/24
 
-&#x20;switchport trunk allowed vlan 10,20
+switchport trunk allowed vlan 10,20
 
-&#x20;switchport mode trunk
+switchport mode trunk
 
 ```
 

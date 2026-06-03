@@ -1,0 +1,38 @@
+! SW2 Configuration
+! ==================
+
+enable
+configure terminal
+hostname SW2
+
+! Create VLANs
+vlan 10
+ name HR
+vlan 20
+ name Finance
+exit
+
+! Trunk port to SW1 (Fa0/3)
+interface FastEthernet0/3
+ switchport mode trunk
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,20
+ no shutdown
+exit
+
+! Access port - PC3 (Fa0/1) - VLAN 20
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+exit
+
+! Access port - PC4 (Fa0/2) - VLAN 20
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+exit
+
+end
+write memory

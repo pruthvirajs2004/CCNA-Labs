@@ -1,0 +1,22 @@
+!===========================================
+! R1 Configuration - Lab 03 OSI Model
+!===========================================
+
+enable
+configure terminal
+hostname R1
+
+! Configure Gateway Interface
+interface GigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+exit
+
+end
+write memory
+
+!===========================================
+! Interface Summary
+!===========================================
+! Gig0/0 → SW1 Fa0/1 | IP: 192.168.1.1/24
+!===========================================

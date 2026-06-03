@@ -1,0 +1,45 @@
+!===========================================
+! Switch1 Configuration - Lab 03 OSI Model
+!===========================================
+
+enable
+configure terminal
+hostname Switch1
+
+! Uplink to R1
+interface FastEthernet0/1
+ no shutdown
+exit
+
+! PC1
+interface FastEthernet0/2
+ no shutdown
+exit
+
+! PC2
+interface FastEthernet0/3
+ no shutdown
+exit
+
+! PC3
+interface FastEthernet0/4
+ no shutdown
+exit
+
+! Server
+interface FastEthernet0/5
+ no shutdown
+exit
+
+end
+write memory
+
+!===========================================
+! Interface Summary
+!===========================================
+! Fa0/1 → R1     Gig0/0  | Uplink
+! Fa0/2 → PC1    Fa0     | End Host
+! Fa0/3 → PC2    Fa0     | End Host
+! Fa0/4 → PC3    Fa0     | End Host
+! Fa0/5 → Server Fa0     | HTTP/DNS Server
+!===========================================

@@ -1,0 +1,62 @@
+!================================================
+! TROUBLESHOOTING SCENARIOS - Lab 03 OSI Model
+!================================================
+
+!------------------------------------------------
+! Scenario 1 - Layer 1: Physical Issue
+!------------------------------------------------
+! Symptom  : PC1 has no connectivity at all
+! Command  : SW1# show interfaces Fa0/2
+! Output   : FastEthernet0/2 is down, line protocol is down
+! Cause    : Cable disconnected or port shutdown
+! Fix      : Reconnect cable in Packet Tracer
+!            or run: interface Fa0/2 → no shutdown
+! Layer    : Layer 1 - Physical
+! Result   : ✅ Interface UP after fix
+
+!------------------------------------------------
+! Scenario 2 - Layer 2: Data Link Issue
+!------------------------------------------------
+! Symptom  : PC1 cannot ping PC2 (same subnet)
+! Command  : SW1# show vlan brief
+! Output   : PC1 port in VLAN 10, PC2 port in VLAN 1
+! Cause    : Ports assigned to different VLANs
+! Fix      : interface Fa0/2
+!             switchport access vlan 1
+! Layer    : Layer 2 - Data Link
+! Result   : ✅ Ping successful after VLAN fix
+
+!------------------------------------------------
+! Scenario 3 - Layer 3: Network Issue
+!------------------------------------------------
+! Symptom  : PC1 cannot reach Server or Router
+! Command  : PC1> ipconfig
+! Output   : Default Gateway: 0.0.0.0 (missing)
+! Cause    : Wrong or missing default gateway on PC
+! Fix      : Set Default Gateway to 192.168.1.1
+!            via Desktop → IP Configuration
+! Layer    : Layer 3 - Network
+! Result   : ✅ Ping to server successful after fix
+
+!------------------------------------------------
+! Scenario 4 - Layer 4: Transport Issue
+!------------------------------------------------
+! Symptom  : Ping works but HTTP page not loading
+! Command  : R1# show access-lists
+! Output   : Access list blocking TCP port 80
+! Cause    : ACL denying HTTP traffic on R1
+! Fix      : Remove ACL or add permit rule:
+!            ip access-list extended ALLOW-HTTP
+!             permit tcp any any eq 80
+! Layer    : Layer 4 - Transport
+! Result   : ✅ HTTP page loads after ACL fix
+
+!================================================
+! OSI TROUBLESHOOTING REFERENCE
+!================================================
+! Layer 1 → show interfaces        | cables, links
+! Layer 2 → show vlan, show mac    | switching, ARP
+! Layer 3 → show ip route, ping    | routing, IP
+! Layer 4 → show access-lists      | ports, ACLs
+! Layer 7 → HTTP/DNS service check | app services
+!================================================

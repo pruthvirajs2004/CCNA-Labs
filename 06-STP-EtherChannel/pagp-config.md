@@ -73,7 +73,7 @@ show interfaces trunk
 # 📡 Expected Result
 
 ```text id="jlwm1n"
-Po3(SU)
+Po2(SU)
 ```
 
 Meaning:
